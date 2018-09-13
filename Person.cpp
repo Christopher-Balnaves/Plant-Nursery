@@ -10,11 +10,10 @@ job = "?";
 working= false;
 }
 
-Person::Person(string pname, string pjob, int pexperience){
+Person::Person(string pname, string pjob){
 
 name=pname;
 job=pjob;
-experience=pexperience;
 working = false;
 }
 
