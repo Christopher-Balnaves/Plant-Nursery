@@ -25,6 +25,6 @@ void set_name(std::string new_name);
 void arrive(int shift_length);
 void leave();
 
-}
+};
 
 #endif PERSON_H
