@@ -13,7 +13,7 @@ bool working;  //if they are currently at work
 public:
 
 Person();
-Person(std::string name, std::string job, int experience);
+Person(std::string pname, std::string pjob, int pexperience);
 
 //getters
 bool at_work();
