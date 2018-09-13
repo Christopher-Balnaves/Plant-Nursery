@@ -22,9 +22,9 @@ std::string get_job();
 
 //setters
 void set_name(std::string new_name);
-void arrive(int shift_length);
+void arrive();
 void leave();
 
 };
 
-#endif PERSON_H
+#endif
