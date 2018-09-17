@@ -55,7 +55,7 @@ bool GardenHand::fertilise(){
   return false;                  
 }
 
-bool restock(int insection, int capacitysection){
+bool GardenHand::restock(int insection, int capacitysection){
   if (insection < capacitysection){         //need to change to function which returns current number in section and capacity
   
   //
@@ -67,10 +67,14 @@ bool restock(int insection, int capacitysection){
   return false;
 }
 
-bool relocate(){
+bool GardenHand::relocate(){
   if (insection < capacitysection){
       //
         ADD HERE PLANT INTO SECTION AND DELETE  FROM LAST SECTION
       //
   }
+}
+
+GardenHand::~GardenHand(){
+  delete [] plantsingarden;
 }
