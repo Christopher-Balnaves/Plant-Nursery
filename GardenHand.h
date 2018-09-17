@@ -9,8 +9,8 @@
 class GardenHand : public Person
 {
 
-plant * plantstowater;
-plant * plantstofertilise;
+plant * plantsingarden;
+int currentno;
 
 public:
 
