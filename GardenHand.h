@@ -14,6 +14,9 @@ int currentno;
 
 public:
 
+GardenHand(std::string name, int currentno);
+GardenHand(currentno);
+
 //int get_number_to_water(); - depends on how boolean functions work
 //int get_number_to_fertilise();
 
