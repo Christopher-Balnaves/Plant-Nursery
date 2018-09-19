@@ -23,7 +23,7 @@ GardenHand(currentno);
 bool water(); //each function returns true if the task needs to be done
 bool fertilise();
 bool restock(int insection, int capacitysection);
-bool relocate(plant planttomove);
+bool relocate(plant planttomove, std::string new_location);
 bool rake_paths();
 
 };
