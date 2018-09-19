@@ -55,24 +55,18 @@ bool GardenHand::fertilise(){
   return false;                  
 }
 
-bool GardenHand::restock(int insection, int capacitysection){
-  if (insection < capacitysection){         //need to change to function which returns current number in section and capacity
+bool GardenHand::restock(planttorestock, int n){
+  if (planttorestock.get_possible_stock()+n>=0){         //need to change to function which returns current number in section and capacity
   
-  //
-  ADD HERE PLANT INTO SECTION
-  //
-  
+    planttorestock.set_current_stock(planttorestock.get_current_stock()+n);
+    
   return true;
   }
   return false;
 }
 
-bool GardenHand::relocate(){
-  if (insection < capacitysection){
-      //
-        ADD HERE PLANT INTO SECTION AND DELETE  FROM LAST SECTION
-      //
-  }
+bool GardenHand::relocate(plant planttomove, std::string new_location){
+       return planttomove.set_location(new_location);
 }
 
 bool GardenHand::rake_paths(){
