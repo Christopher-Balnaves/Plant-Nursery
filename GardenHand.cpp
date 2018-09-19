@@ -38,7 +38,7 @@ bool GardenHand::water(){     //need to get current number of plants into this f
 
 bool GardenHand::fertilise(){
 
-  bool needfertiliser =false;
+  bool needfertiliser = false;
   
   if (currentno==0)
     {
@@ -73,6 +73,10 @@ bool GardenHand::relocate(){
         ADD HERE PLANT INTO SECTION AND DELETE  FROM LAST SECTION
       //
   }
+}
+
+bool GardenHand::rake_paths(){
+  
 }
 
 GardenHand::~GardenHand(){
