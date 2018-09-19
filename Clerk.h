@@ -10,7 +10,7 @@ class Clerk : public Person
 
 public:
 
-Clerk(std::string name);
+Clerk(std::string pname);
 GardenHand();
 
 //methods
