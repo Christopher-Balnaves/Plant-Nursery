@@ -1,4 +1,5 @@
 #include "Plant.h"
+#include <iostream>
 
 int Plant::get_species_id() {
 	return species_id;
@@ -28,6 +29,16 @@ std::string Plant::get_species() {
 	return species;
 }
 
+void Plant::print_information() {
+	std::cout << "For species " << species << " :" << std::endl;
+	std::cout << "\tSpecies ID is " << species_id << "." << std::endl;
+	std::cout << "\tPrice is " << price << " dollars." << std::endl;
+	std::cout << "\tCurrent stock level is " << current_stock << " of " << (current_stock+free_space_in_stock) << "." << std::endl;
+	std::cout << "\tLocation is " << location << "." << std::endl;
+	std::cout << "\t" << species << " must be kept " << in_or_out << "." << std::endl;
+	return;
+}
+
 bool Plant::set_current_stock(int stock_level) {
 	current_stock=stock_level;
 	if (current_stock==stock_level) {
@@ -44,13 +55,4 @@ bool Plant::set_location(std::string new_location) {
 	} else {
 		return false;
 	}
-}
-
-void print_information(std::string query) {
-	std::cout << "For species " << query << " :" << std::endl;
-	std::cout << "\tSpecies ID is " << query.get_species_id() << "." << std::endl;
-	std::cout << "\tPrice is " << query.get_price() << " dollars." << std::endl;
-	std::cout << "\tCurrent stock level is " << query.get_current_stock() " of " << (query.get_current_stock()+query.get_free_space()) << "." << std::endl;
-	std::cout << "\tLocation is " << query.get_location() << "." << std::endl;
-	std::cout << "\t" << query << " must be kept " << query.get_in_or_out() << "." << std::endl;
 }
