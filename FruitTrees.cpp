@@ -1,7 +1,7 @@
 #include "FruitTrees.h"
 
 // Constructors
-FruitTrees::FruitTrees(std::species) {
+FruitTrees::FruitTrees(std::string species) {
 	species_count++;
 	species_id=species_count;
 	price=-1;
@@ -14,7 +14,7 @@ FruitTrees::FruitTrees(std::species) {
 	this->species=species;
 }
 
-FruitTrees::FruitTrees(std::species, int price, int current_stock, int possible_stock, std::string location) {
+FruitTrees::FruitTrees(std::string species, int price, int current_stock, int possible_stock, std::string location) {
 	species_count++;
 	species_id=species_count;
 	this->price=price;
