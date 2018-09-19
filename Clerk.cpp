@@ -11,19 +11,24 @@ Clerk() : Person ("?", "Garden Hand"){
 }
 
 //methods
-bool sell(plant planttosell){
-  //SELECT PLANT TO SELL AND DELETE FROM ARRAY
+bool sell(plant planttosell, int n){
+  return planttosell.set_current_stock(planttoorder.get_current_stock()-n);
 }
 
 bool order(plant planttoorder, int n){
-  //ADD ORDERED PLANTS TO ARRAY
+  if (planttoorder.get_possible_stock()+n>=0){
+    return planttoorder.set_current_stock(planttoorder.get_current_stock()+n);
+  }
+  else {
+    return false;
+  }
 }
 
 int get_current_stock(plant planttocheck){
-  //SEARCH ARRAY FOR PARTICULAR PLANT
+  return planttocheck.get_current_stock();
 }
 
 //setters
-void set_price(plant planttochangeprice){
-    //SET PRICE OF PLANT
+bool set_price(plant planttochangeprice, int price){
+    return (planttochangeprice.set_price(int price);
 }
