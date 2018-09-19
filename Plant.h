@@ -5,6 +5,7 @@
 
 class Plant {
 
+protected:
   static int species_count;     // Count of number of species in nursery - used for inventory array allocation
   int species_id;
   int price;
