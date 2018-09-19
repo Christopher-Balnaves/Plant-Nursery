@@ -37,7 +37,7 @@ void Plant::print_information() {
 	std::cout << "For species " << species << " :" << std::endl;
 	std::cout << "\tSpecies ID is " << species_id << "." << std::endl;
 	std::cout << "\tPrice is " << price << " dollars." << std::endl;
-	std::cout << "\tCurrent stock level is " << current_stock << " of " << possible_stock) << "." << std::endl;
+	std::cout << "\tCurrent stock level is " << current_stock << " of " << possible_stock << "." << std::endl;
 	std::cout << "\tLocation is " << location << "." << std::endl;
 	std::cout << "\t" << species << " must be kept " << in_or_out << "." << std::endl;
 	return;
@@ -53,7 +53,7 @@ bool Plant::set_current_stock(int stock_level) {
 	}
 }
 
-bool Plant::set_possible_location(int stock_level) {
+bool Plant::set_possible_stock(int stock_level) {
 	possible_stock=stock_level;
 	if (possible_stock==stock_level) {
 		return true;
@@ -85,13 +85,13 @@ void Plant::get_watering_req() {
 	std::cout << "Water " << species;
 	switch (watering_req) {
 		case 1:
-			std::cout << " once a week." << endl;
+			std::cout << " once a week." << std::endl;
 			break;
 		case 2:
-			std::cout << " twice a week." << endl;
+			std::cout << " twice a week." << std::endl;
 			break;
 		case 3:
-			std::cout << " three times a week." << endl;
+			std::cout << " three times a week." << std::endl;
 	}
 	
 }
@@ -100,10 +100,10 @@ void Plant::get_fertilizing_req() {
 	std::cout << "Fertilize " << species;
 	switch (fertilizing_req) {
 		case 1:
-			std::cout << " once a year." << endl;
+			std::cout << " once a year." << std::endl;
 			break;
 		case 2:
-			std::cout << " twice a year." << endl;
+			std::cout << " twice a year." << std::endl;
 	}
 	
 }
