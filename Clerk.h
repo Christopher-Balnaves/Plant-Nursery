@@ -14,12 +14,10 @@ Clerk(std::string pname);
 GardenHand();
 
 //methods
-bool sell(plant planttosell); //each function returns true if the task needs to be done
+bool sell(plant planttosell, int n); //each function returns true if the task needs to be done
 bool order(plant planttoorder, int n);
 int get_current_stock(plant planttocheck);
-
-//setters
-void set_price(plant planttochangeprice);
+bool set_price(plant planttochangeprice, int price);
 
 
 };
