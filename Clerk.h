@@ -11,13 +11,14 @@ class Clerk : public Person
 public:
 
 Clerk(std::string pname);
-GardenHand();
+Clerk();
 
 //methods
-bool sell(plant planttosell, int n); //each function returns true if the task needs to be done
-bool order(plant planttoorder, int n);
-int get_current_stock(plant planttocheck);
-bool set_price(plant planttochangeprice, int price);
+//bool sell(Plant planttosell, int n); //each function returns true if the task needs to be done
+//bool order(Plant planttoorder, int n);
+//int get_current_stock(Plant planttocheck);
+//bool set_price(Plant planttochangeprice, int price);
+
 
 
 };

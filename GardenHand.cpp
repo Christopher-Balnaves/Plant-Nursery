@@ -16,6 +16,7 @@ GardenHand::GardenHand(string given_name, int ingarden) : Person (given_name, "G
 int currentno = ingarden;
 }
 
+/*
 //job related methods
 bool GardenHand::water(){     //need to get current number of plants into this function - maybe pass in a variable? or use vectors? 
                               // also should we maybe specify a section?
@@ -28,10 +29,10 @@ bool GardenHand::water(){     //need to get current number of plants into this f
   
   for (int i=0; i < currentno; i++)
     {
-    plant temp = plantsingarden[i];
-      if ((temp.need_water())==true){
-      return true;
-      }
+    //Plant temp = plantsingarden[i];  //Not sure what ur trying to here haha
+     // if ((temp.need_water())==true)} 
+     // return true;
+     // }
     }
   return false;                  
 }
@@ -47,15 +48,15 @@ bool GardenHand::fertilise(){
   
   for (int i=0; i < currentno; i++)
     {
-    plant temp = plantsingarden[i];
-      if ((temp.need_fertiliser())==true){
-      return true;
-      }
+    //Plant temp = plantsingarden[i];    //Same as above you cant really treat objects like varibles this doesnt really make sense
+    //  if ((temp.need_fertiliser())==true){
+    //  return true;
+    //  }
     }
   return false;                  
 }
 
-bool GardenHand::restock(planttorestock, int n){
+bool GardenHand::restock(Plant planttorestock, int n){
   if (planttorestock.get_possible_stock()+n>=0){         //need to change to function which returns current number in section and capacity
   
     planttorestock.set_current_stock(planttorestock.get_current_stock()+n);
@@ -65,7 +66,7 @@ bool GardenHand::restock(planttorestock, int n){
   return false;
 }
 
-bool GardenHand::relocate(plant planttomove, std::string new_location){
+bool GardenHand::relocate(Plant planttomove, std::string new_location){
        return planttomove.set_location(new_location);
 }
 
@@ -73,6 +74,7 @@ bool GardenHand::rake_paths(){
   
 }
 
-GardenHand::~GardenHand(){
-  delete [] plantsingarden;
-}
+//GardenHand::~GardenHand(){
+  //delete [] plantsingarden;
+//}
+*/

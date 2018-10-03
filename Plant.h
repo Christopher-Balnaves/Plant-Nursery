@@ -40,8 +40,8 @@ public:
   // Virtual functions
   virtual void get_watering_req();
   virtual void get_fertilizing_req();
-  virtual bool water_plant()=0;
-  virtual bool fertilize_plant()=0;
+  virtual bool water_plant();
+  virtual bool fertilize_plant();
 
   // No destructors as abstract class
 

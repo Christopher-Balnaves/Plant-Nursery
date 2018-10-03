@@ -1,5 +1,6 @@
 #include "Person.h"
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -40,4 +41,9 @@ working = true;
 }
 void Person::leave(){
 working = false;
+}
+
+//This is how method definitions should be written, need to specify where they come from
+void Person::test() {
+	std::cout << "Hello World! Lorde Rules" << std::endl;
 }

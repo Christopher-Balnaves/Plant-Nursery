@@ -25,6 +25,8 @@ void set_name(std::string new_name);
 void arrive();
 void leave();
 
+void test();
+
 };
 
 #endif

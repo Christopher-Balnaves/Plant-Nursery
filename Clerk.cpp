@@ -1,21 +1,23 @@
 #include "Clerk.h"
 #include <string>
+#include <iostream>
 #include "Person.h"
-#include "Plant.h"
+//#include "Plant.h"
 
 
-Clerk(std::string pname) : Person (pname, "Clerk"){
+Clerk::Clerk(std::string pname) : Person (pname, "Clerk") {
 }
 
-Clerk() : Person ("?", "Garden Hand"){
+Clerk::Clerk() : Person ("?", "Clerk"){
 }
 
+/*
 //methods
-bool sell(plant planttosell, int n){
+bool sell(Plant planttosell, int n){
   return planttosell.set_current_stock(planttoorder.get_current_stock()-n);
 }
 
-bool order(plant planttoorder, int n){
+bool order(Plant planttoorder, int n){
   if (planttoorder.get_possible_stock()+n>=0){
     return planttoorder.set_current_stock(planttoorder.get_current_stock()+n);
   }
@@ -24,11 +26,15 @@ bool order(plant planttoorder, int n){
   }
 }
 
-int get_current_stock(plant planttocheck){
+int get_current_stock(Plant planttocheck){
   return planttocheck.get_current_stock();
 }
 
 //setters
-bool set_price(plant planttochangeprice, int price){
+bool set_price(Plant planttochangeprice, int price){
     return (planttochangeprice.set_price(int price);
 }
+*/
+
+
+
