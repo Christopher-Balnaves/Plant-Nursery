@@ -18,25 +18,26 @@ working = false;
 }
 
 //getters
-bool at_work(){
+bool Person::at_work(){
 return working;
 }
-std::string get_name(){
+
+string Person::get_name(){
 return name;
 }
 
-std::string get_job(){
+string Person::get_job(){
 return job;
 }
 
 //setters
-void set_name(std::string new_name){
+void Person::set_name(std::string new_name){
 name=new_name;
 }
 
-void arrive(){
+void Person::arrive(){
 working = true;
 }
-void leave(){
+void Person::leave(){
 working = false;
 }
