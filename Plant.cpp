@@ -1,5 +1,6 @@
 #include "Plant.h"
 #include <iostream>
+#include <cmath>
 
 // Species_count initialization
 int Plant::species_count=0;
@@ -9,7 +10,7 @@ int Plant::get_species_id() {
 	return species_id;
 }
 
-int Plant::get_price() {
+double Plant::get_price() {
 	return price;
 }
 
@@ -35,11 +36,11 @@ std::string Plant::get_species() {
 
 void Plant::print_information() {
 	std::cout << "For species " << species << " :" << std::endl;
-	std::cout << "\tSpecies ID is " << species_id << "." << std::endl;
-	std::cout << "\tPrice is " << price << " dollars." << std::endl;
-	std::cout << "\tCurrent stock level is " << current_stock << " of " << possible_stock << "." << std::endl;
-	std::cout << "\tLocation is " << location << "." << std::endl;
-	std::cout << "\t" << species << " must be kept " << in_or_out << "." << std::endl;
+	std::cout << "  Species ID is " << species_id << "." << std::endl;
+	std::cout << "  Price is " << price << " dollars." << std::endl;
+	std::cout << "  Current stock level is " << current_stock << " of " << possible_stock << "." << std::endl;
+	std::cout << "  Location is " << location << "." << std::endl;
+	std::cout << "  " << species << " must be kept " << in_or_out << "." << std::endl;
 	return;
 }
 
@@ -71,39 +72,11 @@ bool Plant::set_location(std::string new_location) {
 	}
 }
 
-bool Plant::set_price(int new_price) {
+bool Plant::set_price(double new_price) {
 	price=new_price;
 	if (price==new_price) {
 		return true;
 	} else {
 		return false;
 	}
-}
-
-// Virtual functions
-void Plant::get_watering_req() {
-	std::cout << "Water " << species;
-	switch (watering_req) {
-		case 1:
-			std::cout << " once a week." << std::endl;
-			break;
-		case 2:
-			std::cout << " twice a week." << std::endl;
-			break;
-		case 3:
-			std::cout << " three times a week." << std::endl;
-	}
-	
-}
-
-void Plant::get_fertilizing_req() {
-	std::cout << "Fertilize " << species;
-	switch (fertilizing_req) {
-		case 1:
-			std::cout << " once a year." << std::endl;
-			break;
-		case 2:
-			std::cout << " twice a year." << std::endl;
-	}
-	
 }

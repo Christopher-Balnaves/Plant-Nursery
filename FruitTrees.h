@@ -11,10 +11,14 @@ public:
 	
 	// Constructors
 	FruitTrees(std::string species);
-	FruitTrees(std::string species, int price, int current_stock, int possible_stock, std::string location);
+	FruitTrees(std::string species, double price, int current_stock, int possible_stock, std::string location);
 
 	// Subclass specific function
 	bool pick_fruit();
+
+	// Redeclaration of virtual functions
+	void get_watering_req();
+	void get_fertilizing_req();
 
 	// Destructor
 	~FruitTrees();

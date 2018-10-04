@@ -9,7 +9,7 @@ public:
 	
 	// Constructors
 	Succulents(std::string species);
-	Succulents(std::string species, int price, int current_stock, int possible_stock, std::string location);
+	Succulents(std::string species, double price, int current_stock, int possible_stock, std::string location);
 
 	// Redeclaration of virtual functions
 	void get_watering_req();

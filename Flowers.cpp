@@ -14,7 +14,7 @@ Flowers::Flowers(std::string species) {
 	this->species=species;
 }
 
-Flowers::Flowers(std::string species, int price, int current_stock, int possible_stock, std::string location) {
+Flowers::Flowers(std::string species, double price, int current_stock, int possible_stock, std::string location) {
 	species_count++;
 	species_id=species_count;
 	this->price=price;
@@ -25,6 +25,15 @@ Flowers::Flowers(std::string species, int price, int current_stock, int possible
 	this->location=location;
 	in_or_out="Both";
 	this->species=species;
+}
+
+// Virtual functions
+void Flowers::get_watering_req() {
+	std::cout << species << " is a flower so needs to be watered three times a week." << std::endl;
+}
+
+void Flowers::get_fertilzing_req() {
+	std::cout << species << " is a flower so needs to be fertilized twice a year." << std::endl;
 }
 
 // Destructor

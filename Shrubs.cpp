@@ -14,7 +14,7 @@ Shrubs::Shrubs(std::string species) {
 	this->species=species;
 }
 
-Shrubs::Shrubs(std::string species, int price, int current_stock, int possible_stock, std::string location) {
+Shrubs::Shrubs(std::string species, double price, int current_stock, int possible_stock, std::string location) {
 	species_count++;
 	species_id=species_count;
 	this->price=price;
@@ -25,6 +25,15 @@ Shrubs::Shrubs(std::string species, int price, int current_stock, int possible_s
 	this->location=location;
 	in_or_out="Outdoor";
 	this->species=species;
+}
+
+// Virtual functions
+void Shrubs::get_watering_req() {
+	std::cout << species << " is a shrub so needs to be watered twice a week." << std::endl;
+}
+
+void Shrubs::get_fertilzing_req() {
+	std::cout << species << " is a shrub so needs to be fertilized twice a year." << std::endl;
 }
 
 // Destructor
