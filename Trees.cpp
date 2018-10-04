@@ -14,7 +14,7 @@ Trees::Trees(std::string species) {
 	this->species=species;
 }
 
-Trees::Trees(std::string species, int price, int current_stock, int possible_stock, std::string location) {
+Trees::Trees(std::string species, double price, int current_stock, int possible_stock, std::string location) {
 	species_count++;
 	species_id=species_count;
 	this->price=price;
@@ -25,6 +25,15 @@ Trees::Trees(std::string species, int price, int current_stock, int possible_sto
 	this->location=location;
 	in_or_out="Outdoors";
 	this->species=species;
+}
+
+// Virtual functions
+void Trees::get_watering_req() {
+	std::cout << species << " is a tree so needs to be watered twice a week." << std::endl;
+}
+
+void Trees::get_fertilzing_req() {
+	std::cout << species << " is a tree so needs to be fertilized once a year." << std::endl;
 }
 
 // Destructor

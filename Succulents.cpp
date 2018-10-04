@@ -16,7 +16,7 @@ Succulents::Succulents(std::string species) {
 	this->species=species;
 }
 
-Succulents::Succulents(std::string species, int price, int current_stock, int possible_stock, std::string location) {
+Succulents::Succulents(std::string species, double price, int current_stock, int possible_stock, std::string location) {
 	species_count++;
 	species_id=species_count;
 	this->price=price;
@@ -31,12 +31,11 @@ Succulents::Succulents(std::string species, int price, int current_stock, int po
 
 // Virtual functions
 void Succulents::get_watering_req() {
-	std::cout << "Water " << species << " once a month." << std::endl;
+	std::cout << species << " is a succulent so needs to be watered once every 10 days." << std::endl;
 }
 
-void Succulents::get_fertilizing_req() {
-	std::cout << "Fertilize " << species << " once every 10 days." << std::endl;
+void Succulents::get_fertilzing_req() {
+	std::cout << species << " is a succulent so needs to be fertilized once a month." << std::endl;
 }
-
 // Destructor
 Succulents::~Succulents() {}

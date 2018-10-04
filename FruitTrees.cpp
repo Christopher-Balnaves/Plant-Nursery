@@ -14,7 +14,7 @@ FruitTrees::FruitTrees(std::string species) {
 	this->species=species;
 }
 
-FruitTrees::FruitTrees(std::string species, int price, int current_stock, int possible_stock, std::string location) {
+FruitTrees::FruitTrees(std::string species, double price, int current_stock, int possible_stock, std::string location) {
 	species_count++;
 	species_id=species_count;
 	this->price=price;
@@ -35,6 +35,15 @@ bool FruitTrees::pick_fruit() {
 	} else {
 		return false;
 	}
+}
+
+// Virtual functions
+void FruitTrees::get_watering_req() {
+	std::cout << species << " is a fruit tree so needs to be watered twice a week." << std::endl;
+}
+
+void FruitTrees::get_fertilzing_req() {
+	std::cout << species << " is a fruit tree so needs to be fertilized once a year." << std::endl;
 }
 
 // Destructor
