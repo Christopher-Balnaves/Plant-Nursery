@@ -1,3 +1,6 @@
+//WE NEED TO TEST WHEN INCORRECT ARGUMENTS ARE PASSED INTO THE FUNCTION
+
+
 #include "Person.h"
 //#include "Flowers.h"
 //#include "FruitTrees.h"
@@ -22,6 +25,8 @@ int main() {
 	string name;
 	string job;
 	string plant;
+	string location;
+	bool result=0;
 	int number_of_people=0;
 	int number;
 
@@ -39,7 +44,11 @@ int main() {
 		cout << "Do you want to change their name?" << endl;
 		cin >> answer;
 
-		people[number_of_people]->set_name(name);
+		if (answer=="Yes")
+		{
+			people[number_of_people-1]->set_name(name);
+		}
+		
 	}
 
 	people.push_back(new Clerk("Bob"));
@@ -70,7 +79,7 @@ int main() {
 		people[number_of_people-1]->get_name();//order(plant, number);
 	}
 	
-	cout << "Do you need current stock for a plant" << endl;
+	cout << "Do you need current stock for a plant? " << endl;
 	cin >> answer;
 
 	if (answer=="Yes")
@@ -85,10 +94,38 @@ int main() {
 
 	if (answer=="Yes")
 	{
-		cout << "What is the plant? What is the price?" << endl;
+		cout << "What is the plant? What is the price? " << endl;
 		cin >> plant >> number;
-		people[number_of_people-1]->get_name();//set_price(plant, number);
+		cout << people[number_of_people-1]->get_name() << endl;//set_price(plant, number);
 	}
+
+	cout << "Do you have a plant to move?" << endl;
+	cin >> answer;
+	
+	if (answer=="Yes")
+	{
+		cout << "What is the plant? What is the new location? " << endl;
+		cin >> plant >> location;
+
+
+		Person *temp = new GardenHand("Tom",2);
+		//temp = GardenHand gard("Tom",2);
+		result = people[1]->rake_paths();
+		//temp->rake_paths();
+		//bool result = people[number_of_people-1]->relocate(plant, location);
+
+		if (result==1)
+		{
+			cout << "Worked" << endl;
+		}
+		if (result==0)
+		{
+			cout << "Didn't work" << endl;
+		}
+		delete temp;
+
+	}
+
 	
 	//GardenHand Testing
 

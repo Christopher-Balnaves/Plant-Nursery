@@ -16,8 +16,13 @@ GardenHand::GardenHand(string given_name, int ingarden) : Person (given_name, "G
 int currentno = ingarden;
 }
 
-/*
+GardenHand::GardenHand() : Person ("?", "Garden Hand"){
+int currentno = 0;
+}
+
+
 //job related methods
+/*
 bool GardenHand::water(){     //need to get current number of plants into this function - maybe pass in a variable? or use vectors? 
                               // also should we maybe specify a section?
     bool needwater =false;
@@ -29,15 +34,16 @@ bool GardenHand::water(){     //need to get current number of plants into this f
   
   for (int i=0; i < currentno; i++)
     {
-    //Plant temp = plantsingarden[i];  //Not sure what ur trying to here haha
+    //Plant temp = plantsingarden[i];  
      // if ((temp.need_water())==true)} 
      // return true;
      // }
     }
-  return false;                  
+  return false;               
 }
 
-bool GardenHand::fertilise(){
+
+bool GardenHand::fertilise(){ 
 
   bool needfertiliser = false;
   
@@ -57,6 +63,7 @@ bool GardenHand::fertilise(){
 }
 
 bool GardenHand::restock(Plant planttorestock, int n){
+  
   if (planttorestock.get_possible_stock()+n>=0){         //need to change to function which returns current number in section and capacity
   
     planttorestock.set_current_stock(planttorestock.get_current_stock()+n);
@@ -64,17 +71,24 @@ bool GardenHand::restock(Plant planttorestock, int n){
   return true;
   }
   return false;
-}
-
-bool GardenHand::relocate(Plant planttomove, std::string new_location){
-       return planttomove.set_location(new_location);
-}
-
-bool GardenHand::rake_paths(){
   
 }
+
+
+bool GardenHand::relocate(Plant planttomove, std::string new_location){
+       //return planttomove.set_location(new_location);
+  return false;
+}
+*/
+
+
+
+bool GardenHand::rake_paths(){
+  return true;
+}
+
 
 //GardenHand::~GardenHand(){
   //delete [] plantsingarden;
 //}
-*/
+
