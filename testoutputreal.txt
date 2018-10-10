@@ -1,0 +1,7 @@
+What would you like to do?
+Do you know their job?
+Enter their job: 
+Do you know their name?
+Enter their name: 
+A Garden Hand called Adam was created.
+What would you like to do next?
