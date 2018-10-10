@@ -32,7 +32,7 @@ void Shrubs::get_watering_req() {
 	std::cout << species << " is a shrub so needs to be watered twice a week." << std::endl;
 }
 
-void Shrubs::get_fertilzing_req() {
+void Shrubs::get_fertilizing_req() {
 	std::cout << species << " is a shrub so needs to be fertilized twice a year." << std::endl;
 }
 

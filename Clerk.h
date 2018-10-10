@@ -16,13 +16,11 @@ Clerk();
 
 //methods
 
-/*
-bool sell(Plant planttosell, int n); //each function returns true if the task needs to be done
-bool order(Plant planttoorder, int n);
-int get_current_stock(Plant planttocheck);
-bool set_price(Plant planttochangeprice, int price);
 
-*/
+bool sell(Plant* planttosell, int n); //each function returns true if the task needs to be done
+bool order(Plant* planttoorder, int n);
+int get_current_stock(Plant* planttocheck);
+bool set_price(Plant* planttochangeprice, double price);
 
 };
 

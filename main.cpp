@@ -16,6 +16,7 @@ int main(void) {
 	// Variables controlling running of nursery
 	string command;
 	string answer;
+	int result;
 
 	// Variables related to people
 	vector<Person*> people;
@@ -39,7 +40,8 @@ int main(void) {
 	cout << "What would you like to do?" << endl;
 	
 
-	do {
+	while (command!="Exit") {
+		// cin.ignore();
 		getline(cin,command); 
 		if (command=="Add Person") {
 			cout << "Do you know their job?" << endl;
@@ -60,8 +62,11 @@ int main(void) {
 					getline(cin,name);
 					if (job=="Clerk") {
 						people.push_back(new Clerk(name));
-					} else if (job=="Garden	Hand") {
+					} 
+					if (job=="Garden Hand") {
 						people.push_back(new GardenHand(name,5));
+					} else {
+						cout << "Error." << endl;
 					}
 				} else if (answer=="No") {
 					if (job=="Clerk") {
@@ -81,8 +86,22 @@ int main(void) {
 			} else {
 				cout << "That is not a valid response. Please enter \"Yes\" or \"No\"." << endl;
 			}
-		} else if (command=="Update Person Details") {
-			// cout << "";
+		} else if (command=="Clerk") {
+			result = people[0]->sell(inventory[0],1);
+			if (result==1) {
+				cout << "Worked" << endl;
+			} else 
+			if (result==0) {
+				cout << "Didn't work" << endl;
+			}
+		} else if (command=="Garden Hand") {
+			result = people[0]->restock(inventory[0],1);
+			if (result==1) {
+				cout << "Worked" << endl;
+			} else 
+			if (result==0) {
+				cout << "Didn't work" << endl;
+			}
 		} else if (command=="Add Plant") {
 			cout << "What type of plant would you like to add?" << endl;
 			cin >> plant_type;
@@ -121,6 +140,9 @@ int main(void) {
 								" Type \"Plant Types\" to see a list of valid plant types and please try again." << endl;
 						}
 					} else if (answer=="No") {
+						cin.ignore();
+						cout << "Enter the species: ";
+						getline(cin,species);
 						if (plant_type=="Fruit Tree") {
 							inventory.push_back(new FruitTrees(species));
 						} else if (plant_type=="Tree") {
@@ -132,6 +154,7 @@ int main(void) {
 						} else if (plant_type=="Shrub") {
 							inventory.push_back(new Shrubs(species));
 						}
+
 					} else {
 						cout << "You did not originally enter a valid plant type. Apologies for getting you to input additional information."
 							" Type \"Plant Types\" to see a list of valid plant types and please try again." << endl;	
@@ -160,8 +183,7 @@ int main(void) {
 			cout << "That is not a valid command. Type \"Help\" to see a list of valid commands." << endl;
 		}
 		cout << "What would you like to do next?" << endl;
-		cin.ignore();
-	} while (command!="Exit");
+	}
 
 
 	// Deleting created people and plants

@@ -22,7 +22,7 @@ int currentno = 0;
 
 
 //job related methods
-/*
+
 bool GardenHand::water(){     //need to get current number of plants into this function - maybe pass in a variable? or use vectors? 
                               // also should we maybe specify a section?
     bool needwater =false;
@@ -41,10 +41,7 @@ bool GardenHand::water(){     //need to get current number of plants into this f
     }
   return false;               
 }
-
-
 bool GardenHand::fertilise(){ 
-
   bool needfertiliser = false;
   
   if (currentno==0)
@@ -61,25 +58,22 @@ bool GardenHand::fertilise(){
     }
   return false;                  
 }
-
-bool GardenHand::restock(Plant planttorestock, int n){
+bool GardenHand::restock(Plant* planttorestock, int n){
   
-  if (planttorestock.get_possible_stock()+n>=0){         //need to change to function which returns current number in section and capacity
+  if (planttorestock->get_possible_stock()+n>=0){         //need to change to function which returns current number in section and capacity
   
-    planttorestock.set_current_stock(planttorestock.get_current_stock()+n);
+    planttorestock->set_current_stock(planttorestock->get_current_stock()+n);
     
   return true;
   }
   return false;
   
 }
-
-
-bool GardenHand::relocate(Plant planttomove, std::string new_location){
+bool GardenHand::relocate(Plant* planttomove, std::string new_location){
        //return planttomove.set_location(new_location);
   return false;
 }
-*/
+
 
 
 
@@ -91,4 +85,3 @@ bool GardenHand::rake_paths(){
 //GardenHand::~GardenHand(){
   //delete [] plantsingarden;
 //}
-
