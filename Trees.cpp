@@ -32,7 +32,7 @@ void Trees::get_watering_req() {
 	std::cout << species << " is a tree so needs to be watered twice a week." << std::endl;
 }
 
-void Trees::get_fertilzing_req() {
+void Trees::get_fertilizing_req() {
 	std::cout << species << " is a tree so needs to be fertilized once a year." << std::endl;
 }
 

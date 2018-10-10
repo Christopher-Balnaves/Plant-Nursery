@@ -34,7 +34,7 @@ void Succulents::get_watering_req() {
 	std::cout << species << " is a succulent so needs to be watered once every 10 days." << std::endl;
 }
 
-void Succulents::get_fertilzing_req() {
+void Succulents::get_fertilizing_req() {
 	std::cout << species << " is a succulent so needs to be fertilized once a month." << std::endl;
 }
 // Destructor
