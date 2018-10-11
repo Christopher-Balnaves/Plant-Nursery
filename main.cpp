@@ -16,7 +16,9 @@ int main(void) {
 	// Variables controlling running of nursery
 	string command;
 	string answer;
-	int result;
+	int arr_location;
+	bool boolean;
+	int amount;
 
 	// Variables related to people
 	vector<Person*> people;
@@ -36,34 +38,29 @@ int main(void) {
 
 
 
-	cout << "Welcome to the University of Adelaide Garden Nursery!" << endl; 
+	cout << "Welcome to Bridget's Garden Nursery!" << endl; 
 	cout << "What would you like to do?" << endl;
-	
+	getline(cin,command);
 
-	while (command!="Exit") {
-		// cin.ignore();
-		getline(cin,command); 
+	while (command!="Exit") { 
 		if (command=="Add Person") {
 			cout << "Do you know their job?" << endl;
-			cin >> answer;
+			getline(cin,answer);
 			if (answer=="Yes") {
 				cout << "Enter their job: ";
-				cin.ignore();
 				getline(cin,job);
 				if ((job!="Clerk") && (job!="Garden Hand")){
 					cout << "That is not a valid response. Please enter \"Clerk\" or \"Garden Hand\"." << endl;
 					getline(cin,job);
 				}
 				cout << "Do you know their name?" << endl;
-				cin >> answer;
+				getline(cin,answer);
 				if (answer=="Yes") {
 					cout << "Enter their name: ";
-					cin.ignore();
 					getline(cin,name);
 					if (job=="Clerk") {
 						people.push_back(new Clerk(name));
-					} 
-					if (job=="Garden Hand") {
+					} else if (job=="Garden Hand") {
 						people.push_back(new GardenHand(name,5));
 					} else {
 						cout << "Error." << endl;
@@ -86,45 +83,109 @@ int main(void) {
 			} else {
 				cout << "That is not a valid response. Please enter \"Yes\" or \"No\"." << endl;
 			}
-		} else if (command=="Clerk") {
-			result = people[0]->sell(inventory[0],1);
-			if (result==1) {
-				cout << "Worked" << endl;
-			} else 
-			if (result==0) {
-				cout << "Didn't work" << endl;
+		} else if (command=="Update Person Details") {
+			cout << "You can't update person details at the moment." << endl;
+
+
+
+
+
+
+			s
+		} else if (command=="Sell") {
+			cout << "Which species do you want to sell?" << endl;
+			getline(cin,species);
+			boolean=false;
+			// Getting vector location of species in question
+			for (int i = 0; i < inventory.size(); ++i) {
+				if (boolean==true) break;
+				if (species==inventory[i]->get_species()) {
+					arr_location=i;
+					boolean=true;
+				}
+			}
+			if (boolean==false) {
+				cout << "There is no species by that name in the nursery." << endl;
+			} else {
+				if (inventory[arr_location]->get_current_stock()==0) {
+					cout << "There is no stock available of this plant." << endl;
+				} else {
+					cout << "Enter the amount to be sold: " << endl;
+					cin >> amount;
+					cin.ignore();
+					boolean = people[0]->sell(inventory[arr_location],amount);
+					if (boolean==true) {
+						cout << "Sale successful." << endl;
+					} else {
+						cout << "Sale unsuccessful." << endl;
+					}
+				}
+			}
+		} else if (command=="Order") {
+			cout << "Which species do you want to order?" << endl;
+			getline(cin,species);
+			boolean=false;
+			// Getting vector location of species in question
+			for (int i = 0; i < inventory.size(); ++i) {
+				if (boolean==true) break;
+				if (species==inventory[i]->get_species()) {
+					arr_location=i;
+					boolean=true;
+				}
+			}
+			if (boolean==false) {
+				cout << "There is no species by that name in the nursery." << endl;
+			} else {
+				if (inventory[arr_location]->get_current_stock()==0) {
+					cout << "There is no stock available of this plant." << endl;
+				} else {
+					cout << "Enter the amount to be ordered: " << endl;
+					cin >> amount;
+					while (amount<0) {
+						cout << "You can't order a negative number of plants." << endl;
+						cout << "Enter a positive number: " << endl;
+						cin >> amount;
+					}
+					cin.ignore();
+					boolean = people[0]->order(inventory[arr_location],amount);
+					if (boolean==true) {
+						cout << "Order successful." << endl;
+					} else {
+						cout << "Order unsuccessful." << endl;
+					}
+				}
 			}
 		} else if (command=="Garden Hand") {
-			result = people[0]->restock(inventory[0],1);
-			if (result==1) {
+			boolean = people[0]->restock(inventory[0],1);
+			if (boolean==true) {
 				cout << "Worked" << endl;
 			} else 
-			if (result==0) {
+			if (boolean==false) {
 				cout << "Didn't work" << endl;
 			}
 		} else if (command=="Add Plant") {
 			cout << "What type of plant would you like to add?" << endl;
-			cin >> plant_type;
+			getline(cin,plant_type);
 			if ((plant_type!="Fruit Tree") && (plant_type!="Tree") && (plant_type!="Flower") && (plant_type!="Succulent") && (plant_type!="Shrub")) {
 				cout << "That is not a valid plant type. Type \"Plant Types\" to see a list of valid plant types." << endl;
 			} else {
 				cout << "Do you know the species?" << endl;
-				cin >> answer;
+				getline(cin,answer);
 				if (answer=="Yes") {
 					cout << "Do you know all of the following details?" << endl;
 					cout << "  Location" << endl;
 					cout << "  Price" << endl;
 					cout << "  Current Stock" << endl;
 					cout << "  Possible Stock" << endl;
-					cin >> answer;
+					getline(cin,answer);
 					if (answer=="Yes") {
-						cin.ignore();
 						cout << "Enter the species: ";
 						getline(cin,species);
 						cout << "Enter the location: ";
 						getline(cin,location);
-						cout << "Enter the price, current_stock and possible_stock: ";
+						cout << "Enter the price, current stock level and possible stock level: ";
 						cin >> price >> current_stock >> possible_stock;
+						cin.ignore();
 						if (plant_type=="Fruit Tree") {
 							inventory.push_back(new FruitTrees(species,price,current_stock,possible_stock,location));
 						} else if (plant_type=="Tree") {
@@ -140,7 +201,6 @@ int main(void) {
 								" Type \"Plant Types\" to see a list of valid plant types and please try again." << endl;
 						}
 					} else if (answer=="No") {
-						cin.ignore();
 						cout << "Enter the species: ";
 						getline(cin,species);
 						if (plant_type=="Fruit Tree") {
@@ -154,7 +214,6 @@ int main(void) {
 						} else if (plant_type=="Shrub") {
 							inventory.push_back(new Shrubs(species));
 						}
-
 					} else {
 						cout << "You did not originally enter a valid plant type. Apologies for getting you to input additional information."
 							" Type \"Plant Types\" to see a list of valid plant types and please try again." << endl;	
@@ -165,7 +224,6 @@ int main(void) {
 					cout << "That is not a valid response. Please enter \"Yes\" or \"No\"." << endl;	
 				}
 			}
-
 		} else if (command=="Plant Types") {
 			cout << "Plant types at the UoA Garden Nursery include:" << endl;
 			cout << "  Fruit Tree" << endl;
@@ -177,12 +235,25 @@ int main(void) {
 			cout << "Valid commands include:" << endl;
 			cout << "  Add Person" << endl;
 			cout << "  Update Person Details" << endl;
+			cout << "  Sell" << endl;
+			cout << "  Order" << endl;
+			cout << "  Get Current Stock" << endl;
+			cout << "  Set Price" << endl;
+			cout << "  Garden Hand" << endl;
+			cout << "  Add Plant" << endl;
+			cout << "  Plant Types" << endl;
+			cout << "  List Plants" << endl;
+			cout << "  Water" << endl;
+			cout << "  Fertilize" << endl;
+			cout << "  Pick Fruit" << endl;
+			cout << "  Rake Paths" << endl;
 			cout << "  Help" << endl;
 			cout << "  Exit" << endl;
 		} else {
 			cout << "That is not a valid command. Type \"Help\" to see a list of valid commands." << endl;
 		}
 		cout << "What would you like to do next?" << endl;
+		getline(cin,command);
 	}
 
 

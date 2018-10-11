@@ -2,11 +2,11 @@
 
 
 #include "Person.h"
-//#include "Flowers.h"
-//#include "FruitTrees.h"
-//#include "Shrubs.h"
-//#include "Succulents.h"
-//#include "Trees.h"
+#include "Flowers.h"
+#include "FruitTrees.h"
+#include "Shrubs.h"
+#include "Succulents.h"
+#include "Trees.h"
 #include "GardenHand.h"
 #include "Clerk.h"
 
@@ -133,7 +133,6 @@ int main() {
 	cout << "Testing GardenHand " << endl;
 	cout << "Do you want to water a plant?"
 	cin >> answer;
-
 	if (answer=="Yes")
 	{
 		cout << "What is the plant? What is the price?" << endl;
