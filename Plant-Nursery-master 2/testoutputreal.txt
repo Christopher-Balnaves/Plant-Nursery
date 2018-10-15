@@ -1,0 +1,24 @@
+Welcome to Bridget's Garden Nursery!
+What would you like to do?
+Do you know their job?
+Enter their job: Do you know their name?
+Enter their name: A Clerk called Tom was created.
+What would you like to do next?
+What type of plant would you like to add?
+Do you know the species?
+Do you know all of the following details?
+  Location
+  Price
+  Current Stock
+  Possible Stock
+Enter the species: Enter the location: Enter the price, current stock level and possible stock level: What would you like to do next?
+Which species do you want to sell?
+Enter the amount to be sold: 
+Sale successful.
+What would you like to do next?
+Which species do you want to order?
+Enter the amount to be ordered: 
+You can't order a negative number of plants.
+Enter a positive number: 
+Order successful.
+What would you like to do next?

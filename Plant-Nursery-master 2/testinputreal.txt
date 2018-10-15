@@ -1,0 +1,20 @@
+Add Person
+Yes
+Clerk
+Yes
+Tom
+Add Plant
+Flower
+Yes
+Yes
+Rose
+Outside
+5.5 6 8
+Sell
+Rose
+2
+Order
+Rose
+-1
+2
+Exit
