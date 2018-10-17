@@ -44,10 +44,6 @@ void Person::leave(){
 working = false;
 }
 
-//This is how method definitions should be written, need to specify where they come from
-void Person::test() {
-	std::cout << "Hello World! Lorde Rules" << std::endl;
-}
 
 //virtual definitions
 bool Person::rake_paths(){
@@ -55,12 +51,12 @@ bool Person::rake_paths(){
 	return false;
 }
 
-bool Person::water(){
+bool Person::water(Plant* watering, int currentnumber){
 	std::cout << "Clerks cannot water plants. " << std::endl;
 	return false;
 } //each function returns true if the task needs to be done
 
-bool Person::fertilise(){
+bool Person::fertilise(Plant* watering, int currentnumber){
 	std::cout << "Clerks cannot fertilise plants. " << std::endl;
 	return false;
 }

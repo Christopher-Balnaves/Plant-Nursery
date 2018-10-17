@@ -26,11 +26,9 @@ void set_name(std::string new_name);
 void arrive();
 void leave();
 
-void test();
-
 //Virtual functions from GardenHand
-virtual bool water(); //each function returns true if the task needs to be done
-virtual bool fertilise();
+virtual bool water(Plant* watering, int currentnumber);
+virtual bool fertilise(Plant* watering, int currentnumber);
 virtual bool restock(Plant* planttorestock, int n);
 virtual bool relocate(Plant* planttomove, int new_location);
 virtual bool pick_fruit(Plant* planttopick);

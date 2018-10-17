@@ -6,43 +6,44 @@
 using namespace std;
 
 //constructors
-GardenHand::GardenHand(int ingarden) : Person ("?", "Garden Hand"){
-int currentno = ingarden;
+GardenHand::GardenHand(int assignment) : Person ("?", "Garden Hand"){
+int assigned_location = assignment;
 }
 
 
-GardenHand::GardenHand(string given_name, int ingarden) : Person (given_name, "Garden Hand"){
-int currentno = ingarden;
+GardenHand::GardenHand(string given_name, int assignment) : Person (given_name, "Garden Hand"){
+int assigned_location = assignment;
 }
 
-GardenHand::GardenHand() : Person ("?", "Garden Hand"){
-int currentno = 0;
-}
 
+//getters
+int GardenHand::get_assigned_location(){
+  return assigned_location;
+}
 
 //job related methods
 
-bool GardenHand::water(int currentnumber){  
+bool GardenHand::water(Plant* watering, int currentnumber){  
   
   if (currentnumber==0) {
-      cout << " There are no plants in the nursery, so they cannot be watered." << endl;
+      cout << " There are no plants in this location, so they cannot be watered." << endl;
       return false;
     }
   
-  else{
+  else {
     cout << "There are " << currentnumber << " plants which were sucessfully watered." << endl; 
      return true;
      
     }             
 }
-bool GardenHand::fertilise(int currentnumber){ 
+bool GardenHand::fertilise(Plant* watering, int currentnumber){ 
   
   if (currentnumber==0) {
-      cout << " There are no plants in the nursery, so they cannot be fertilised." << endl;
+      cout << " There are no plants in this location, so they cannot be fertilised." << endl;
       return false;
     }
   
-  else{
+  else {
     cout << "There are " << currentnumber << " plants which were sucessfully fertilised." << endl; 
      return true;
      
@@ -68,5 +69,5 @@ bool GardenHand::rake_paths(){
 
 
 //GardenHand::~GardenHand(){
-  //delete [] plantsingarden;
+  //delete [] plantsassignment;
 //}
