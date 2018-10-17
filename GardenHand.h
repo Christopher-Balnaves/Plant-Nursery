@@ -9,22 +9,22 @@
 class GardenHand : public Person
 {
 
-//Plant * plantsingarden;
 int currentno;
 
 public:
 
+//Constructors
 GardenHand(std::string given_name, int ingarden);
 GardenHand();
 GardenHand(int ingarden);
 
-// int get_number_to_water(); // depends on how boolean functions work
-// int get_number_to_fertilise();
 
-bool water(); //each function returns true if the task needs to be done
-bool fertilise();
+//Methods
+bool water(int currentnumber); //each function returns true if the task needs to be done
+bool fertilise(int currentnumber);
 bool restock(Plant* planttorestock, int n);
-bool relocate(Plant* planttomove, std::string new_location);
+bool relocate(Plant* planttomove, int new_location);
+bool pick_fruit(Plant* planttopick);
 bool rake_paths();
 
 };

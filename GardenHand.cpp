@@ -1,4 +1,3 @@
-
 #include <string>
 #include "GardenHand.h"
 #include "Person.h"
@@ -23,57 +22,43 @@ int currentno = 0;
 
 //job related methods
 
-bool GardenHand::water(){     //need to get current number of plants into this function - maybe pass in a variable? or use vectors? 
-                              // also should we maybe specify a section?
-    bool needwater =false;
+bool GardenHand::water(int currentnumber){  
   
-  if (currentno==0)
-    {
-    return false;
+  if (currentnumber==0) {
+      cout << " There are no plants in the nursery, so they cannot be watered." << endl;
+      return false;
     }
   
-  for (int i=0; i < currentno; i++)
-    {
-    //Plant temp = plantsingarden[i];  
-     // if ((temp.need_water())==true)} 
-     // return true;
-     // }
-    }
-  return false;               
+  else{
+    cout << "There are " << currentnumber << " plants which were sucessfully watered." << endl; 
+     return true;
+     
+    }             
 }
-bool GardenHand::fertilise(){ 
-  bool needfertiliser = false;
+bool GardenHand::fertilise(int currentnumber){ 
   
-  if (currentno==0)
-    {
-    return false;
+  if (currentnumber==0) {
+      cout << " There are no plants in the nursery, so they cannot be fertilised." << endl;
+      return false;
     }
   
-  for (int i=0; i < currentno; i++)
-    {
-    //Plant temp = plantsingarden[i];    //Same as above you cant really treat objects like varibles this doesnt really make sense
-    //  if ((temp.need_fertiliser())==true){
-    //  return true;
-    //  }
-    }
-  return false;                  
+  else{
+    cout << "There are " << currentnumber << " plants which were sucessfully fertilised." << endl; 
+     return true;
+     
+    }                    
 }
 bool GardenHand::restock(Plant* planttorestock, int n){
-  
-  if (planttorestock->get_possible_stock()+n>=0){         //need to change to function which returns current number in section and capacity
-  
-    planttorestock->set_current_stock(planttorestock->get_current_stock()+n);
-    
-  return true;
-  }
-  return false;
+  //first check if there is the room to put in the number of plants to be restocked
+  return planttorestock->set_current_stock(planttorestock->get_current_stock()+n);
   
 }
-bool GardenHand::relocate(Plant* planttomove, std::string new_location){
-       //return planttomove.set_location(new_location);
-  return false;
+bool GardenHand::relocate(Plant* planttomove, int new_location){
+    return planttomove->set_location(new_location);
 }
-
+bool GardenHand::pick_fruit(Plant* planttopick){
+    return planttopick->pick_fruit();
+}
 
 
 

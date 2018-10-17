@@ -70,9 +70,14 @@ bool Person::restock(Plant* planttorestock, int n){
 	return false;
 }
 
-bool Person::relocate(Plant* planttomove, std::string new_location){
+bool Person::relocate(Plant* planttomove, int new_location){
 	std::cout << "Clerks cannot relocate plants. " << std::endl;
 	return false;
+}
+
+bool Person::pick_fruit(Plant* planttopick) {
+	std::cout << "Clerks cannot pick fruit. " << std::endl;
+	return false;	
 }
 
 bool Person::sell(Plant* planttosell, int n){
@@ -89,6 +94,11 @@ int Person::get_current_stock(Plant* planttocheck){
 	std::cout << "Garden hands cannot get current stock. " << std::endl;
 	return false;
 } 
+
+void Person::get_information(Plant* planttocheck){
+	std::cout << "Garden hands cannot get information. " << std::endl;
+	return;
+}
 
 bool Person::set_price(Plant* planttochangeprice, int price){
 	std::cout << "Garden hands cannot set price. " << std::endl;

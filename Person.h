@@ -32,13 +32,15 @@ void test();
 virtual bool water(); //each function returns true if the task needs to be done
 virtual bool fertilise();
 virtual bool restock(Plant* planttorestock, int n);
-virtual bool relocate(Plant* planttomove, std::string new_location);
+virtual bool relocate(Plant* planttomove, int new_location);
+virtual bool pick_fruit(Plant* planttopick);
 virtual bool rake_paths();
 
 //Virtual functions from Clerk
 
 virtual bool sell(Plant* planttosell, int n); //each function returns true if the task needs to be done
 virtual bool order(Plant* planttoorder, int n);
+virtual void get_information(Plant* planttocheck);
 virtual int get_current_stock(Plant* planttocheck);
 virtual bool set_price(Plant* planttochangeprice, int price);
 

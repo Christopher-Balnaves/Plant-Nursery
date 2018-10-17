@@ -18,11 +18,12 @@ bool Clerk::sell(Plant* planttosell, int n){
   	return planttosell->set_current_stock(planttosell->get_current_stock()-n);
 }
 bool Clerk::order(Plant* planttoorder, int n){
-	if (planttoorder->get_current_stock()+n <= planttoorder->get_possible_stock()){
-		return planttoorder->set_current_stock(planttoorder->get_current_stock()+n);
-	} else {
-		return false;
-	}
+	return planttoorder->set_current_stock(planttoorder->get_current_stock()+n);
+
+}
+void Clerk::get_information(Plant* planttocheck) {
+	planttocheck->print_information();
+	return;
 }
 int Clerk::get_current_stock(Plant* planttocheck){
  	return planttocheck->get_current_stock();
