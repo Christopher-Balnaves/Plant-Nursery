@@ -95,8 +95,8 @@ int main(void) {
 							} else if (job=="Garden Hand") {
 								cout << "What is their assigned location's reference number?" << endl;
 								cin >> amount;
-								while ((amount > NO_OF_LOCATIONS) || (amount < 0)) {
-									cout << "That is not a valid reference number. Enter a number between 0 (inclusive) and " << NO_OF_LOCATIONS << " (non-inclusive)." << endl;
+								while ((amount > NO_OF_LOCATIONS) || (amount < 0) || (cin.fail()==1)) {
+									cout << "That is not a valid reference number. Enter an integer between 0 (inclusive) and " << NO_OF_LOCATIONS << " (non-inclusive)." << endl;
 									cin >> amount;
 								}
 								people[1]=new GardenHand(name,amount);
@@ -118,8 +118,8 @@ int main(void) {
 							} else if (job=="Garden Hand") {
 								cout << "What is their assigned location's reference number?" << endl;
 								cin >> amount; 
-								while ((amount > NO_OF_LOCATIONS) || (amount < 0)) {
-									cout << "That is not a valid reference number. Enter a number between 0 (inclusive) and " << NO_OF_LOCATIONS << " (non-inclusive)." << endl;
+								while ((amount > NO_OF_LOCATIONS) || (amount < 0) || (cin.fail()==1)) {
+									cout << "That is not a valid reference number. Enter an integer between 0 (inclusive) and " << NO_OF_LOCATIONS << " (non-inclusive)." << endl;
 								}
 								people[1]=new GardenHand(amount);
 								have_gardenhand=true;
@@ -267,6 +267,10 @@ int main(void) {
 						//only runs if there is stock
 						cout << "Enter the amount to be sold: " << endl;
 						cin >> amount;
+						while (cin.fail()==1) {
+							cout << "You must enter an integer value." << endl << "Enter the amount to be sold: " << endl;
+							cin >> amount;
+						}
 						cin.ignore();
 						boolean = people[0]->sell(inventory[arr_location],amount);
 						if (boolean==true) {
@@ -311,14 +315,26 @@ int main(void) {
 					} else {
 						cout << "Enter the amount to be ordered: " << endl;
 						cin >> amount;
+						while (cin.fail()==1) {
+							cout << "You must enter an integer value." << endl << "Enter the amount to be ordered: ";
+							cin >> amount;
+						}
 						while (amount<0) {
 							cout << "You can't order a negative number of plants." << endl;
 							cout << "Enter a positive number: " << endl;
 							cin >> amount;
+							while (cin.fail()==1) {
+								cout << "You must enter an integer value." << endl << "Enter the POSITIVE amount to be ordered: ";
+								cin >> amount;
+							}
 						}
 						while (amount>avail_stock_in_location[location]) {
 							cout << "There is only " << avail_stock_in_location[location] << " more spaces available at that location.";
 							cin >> amount;
+							while (cin.fail()==1) {
+								cout << "You must enter an integer value." << endl << "Enter the amount to be ordered: " << endl;
+								cin >> amount;
+							}
 						}
 						boolean = people[0]->order(inventory[arr_location],amount);
 						if (boolean==true) {
@@ -351,10 +367,22 @@ int main(void) {
 						getline(cin,species);
 						cout << "Enter the location reference number: ";
 						cin >> location;
+						while (cin.fail()==1) {
+							cout << "You must enter an integer value." << endl << "Enter the location reference number: " << endl;
+							cin >> amount;
+						}
 						cout << "Enter the price: ";
 						cin >> price;
+						while (cin.fail()==1) {
+							cout << "You must enter an integer value." << endl << "Enter the price: " << endl;
+							cin >> amount;
+						}
 						cout << "Enter the current stock level: ";
 						cin >> current_stock;
+						while (cin.fail()==1) {
+							cout << "You must enter an integer value." << endl << "Enter the current stock level: " << endl;
+							cin >> amount;
+						}
 						cin.ignore();
 						while (current_stock>avail_stock_in_location[location]) {	
 							cout << "Error. There is only room for " << avail_stock_in_location[location] << " more plants in that location." << endl; // If try to put more stock in location than possible, 
@@ -363,9 +391,17 @@ int main(void) {
 							if (answer=="Stock Level") {																								//must change either the stock level or
 								cout << "Enter the current stock level: ";
 								cin >> current_stock;
+								while (cin.fail()==1) {
+									cout << "You must enter an integer value." << endl << "Enter the current stock level: " << endl;
+									cin >> amount;
+								}
 							} else if (answer=="Location") {																							//or location
 								cout << "Enter the location reference number: ";
 								cin >> location;
+								while (cin.fail()==1) {
+									cout << "You must enter an integer value." << endl << "Enter the location reference number: " << endl;
+									cin >> amount;
+								}
 							} else {
 								cout << "That is not a valid answer. Enter \"Stock Level\" or \"Location\".";
 							}
@@ -455,6 +491,10 @@ int main(void) {
 				} else {
 					cout << "Enter the new price: " << endl;
 					cin >> price;
+					while (cin.fail()==1) {
+						cout << "You must enter an integer value." << endl << "Enter the new price: " << endl;
+						cin >> amount;
+					}
 					cin.ignore();
 					boolean=people[0]->set_price(inventory[arr_location],price);
 					if (boolean==true) {
@@ -489,6 +529,10 @@ int main(void) {
 				} else {
 					cout << "Enter the new location reference number: " << endl;
 					cin >> location;
+					while (cin.fail()==1) {
+						cout << "You must enter an integer value." << endl << "Enter the new location reference number: " << endl;
+					    cin >> amount;
+					}
 					cin.ignore();
 					boolean=people[1]->relocate(inventory[arr_location],location);
 					if (boolean==true) {
@@ -523,6 +567,10 @@ int main(void) {
 				} else {
 					cout << "Enter the new amount being restocked: " << endl;
 					cin >> amount;
+					while (cin.fail()==1) {
+						cout << "You must enter an integer value." << endl << "Enter the amount to be restocked: " << endl;
+						cin >> amount;
+					}
 					cin.ignore();
 					location=inventory[arr_location]->get_location();
 					if (avail_stock_in_location[location]<amount) {
@@ -709,8 +757,8 @@ int main(void) {
 			cout << "  Set Price" << endl;
 			cout << "  Relocate Plant" << endl;
 			cout << "  Restock Plant" << endl;
-			// cout << "  Water" << endl;
-			// cout << "  Fertilize" << endl;
+			cout << "  Water" << endl;
+			cout << "  Fertilize" << endl;
 			cout << "  Pick Fruit" << endl;
 			cout << "  Rake Paths" << endl;
 			cout << "  List Plants" << endl;
