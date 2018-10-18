@@ -7,8 +7,8 @@ Trees::Trees(std::string species) {
 	class_id=5;
 	price=-1;
 	current_stock=0;
-	fertilizing_req=1; 	// Once a year
-	watering_req=2;		// Twice a week
+	need_watering=true;
+	need_fertilizing=true;
 	location=-1;
 	in_or_out="Outdoors";
 	this->species=species;
@@ -20,8 +20,8 @@ Trees::Trees(std::string species, double price, int current_stock, int location)
 	class_id=5;
 	this->price=price;
 	this->current_stock=current_stock;
-	fertilizing_req=1; 	// Once a year
-	watering_req=2;		// Twice a week
+	need_watering=true;
+	need_fertilizing=true;
 	this->location=location;
 	in_or_out="Outdoors";
 	this->species=species;

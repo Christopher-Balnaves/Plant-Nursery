@@ -1,0 +1,59 @@
+Welcome to Bridget's Garden Nursery!
+What would you like to do?
+That is not a valid command. Type "Help" to see a list of valid commands.
+What would you like to do next?
+There is no employee to change the name of.
+What would you like to do next?
+There is no employee to change the name of.
+What would you like to do next?
+There are no plants in the nursery.
+What would you like to do next?
+You must add a plant to the nursery before it can be ordered.
+What would you like to do next?
+There are no plants in the nursery.
+What would you like to do next?
+There are no plants in the nursery.
+What would you like to do next?
+There are no plants in the nursery.
+What would you like to do next?
+There are no plants in the nursery.
+What would you like to do next?
+There are no plants in the nursery.
+What would you like to do next?
+There are no plants in the nursery.
+What would you like to do next?
+There is no garden hand to rake the paths.
+What would you like to do next?
+There are no plants in the nursery.
+What would you like to do next?
+There are no plants in the nursery.
+What would you like to do next?
+Available space for each reference number is as follows: 
+0: 50
+What would you like to do next?
+Plant types at Brdget's Garden Nursery include:
+  Fruit Tree
+  Tree
+  Flower
+  Succulent
+  Shrub
+What would you like to do next?
+Valid commands include:
+  Add Person
+  Change Name
+  Change Job
+  Sell
+  Order
+  Add Plant
+  Set Price
+  Relocate Plant
+  Restock Plant
+  Pick Fruit
+  Rake Paths
+  List Plants
+  Get Information
+  Get Available Space
+  Plant Types
+  Help
+  Exit
+What would you like to do next?

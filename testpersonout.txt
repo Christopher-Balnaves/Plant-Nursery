@@ -1,0 +1,29 @@
+Welcome to Bridget's Garden Nursery!
+What would you like to do?
+Do you know their job?
+Enter their job: Do you know their name?
+Enter their name: A Clerk called Tom was created.
+What would you like to do next?
+Do you know their job?
+Enter their job: Do you know their name?
+That is not a valid response. Please enter "Yes" or "No".
+What is their assigned location's reference number?
+A Garden Hand called ? was created.
+What would you like to do next?
+Do you want to update the name of the Clerk or the Garden Hand?
+Enter the new name: 
+The Garden Hand has been renamed as Ben.
+What would you like to do next?
+WARNING! Changing jobs will fire the incumbent!
+Do you still wish to proceed?
+Enter the name of the person whose job is changing: 
+Enter their new job: 
+Tom is now a Garden Hand.
+What would you like to do next?
+Do you know their job?
+A person was created and assigned the job 'Clerk'.
+What would you like to do next?
+Do you want to update the name of the Clerk or the Garden Hand?
+Enter the new name: 
+The Clerk has been renamed as Tom.
+What would you like to do next?

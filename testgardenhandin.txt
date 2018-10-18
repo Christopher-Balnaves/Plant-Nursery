@@ -1,0 +1,31 @@
+Add Person
+Yes
+Garden Hand
+Yes
+Tom
+0
+Add Plant
+Flower
+Yes
+No
+Rose
+Relocate Plant
+Rose
+0
+Restock Plant
+Rose
+51
+Restock Plant
+Rose
+12
+Rake Paths
+Pick Fruit
+Add Plant
+Fruit Tree
+Yes
+No
+Apple Tree
+Pick Fruit
+Water
+Fertilize
+Exit

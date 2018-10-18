@@ -1,0 +1,23 @@
+Welcome to Bridget's Garden Nursery!
+What would you like to do?
+What type of plant would you like to add?
+Do you know the species?
+Do you know all of the following details?
+  Location Reference Number
+  Price
+  Current Stock
+Enter the species: Enter the location reference number: Enter the price: Enter the current stock level: What would you like to do next?
+There is no clerk to sell the plant.
+What would you like to do next?
+There is no clerk to order the plant.
+What would you like to do next?
+There is no clerk to order the plant.
+What would you like to do next?
+There is no garden hand to relocate the plant.
+What would you like to do next?
+There is no garden hand to restock the plant.
+What would you like to do next?
+There is no garden hand to pick fruit.
+What would you like to do next?
+There is no clerk to get that information.
+What would you like to do next?

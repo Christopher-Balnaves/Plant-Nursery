@@ -22,6 +22,10 @@ int Plant::get_current_stock() {
 	return current_stock;
 }
 
+int Plant::get_species_count() {
+	return species_count;
+}
+
 int Plant::get_location() {
 	return location;
 }
@@ -32,6 +36,14 @@ std::string Plant::get_in_or_out() {
 
 std::string Plant::get_species() {
 	return species;
+}
+
+bool Plant::get_need_watering() {
+	return need_watering;
+}
+
+bool Plant::get_need_fertilizing() {
+	return need_fertilizing;
 }
 
 // Setters
@@ -56,6 +68,24 @@ bool Plant::set_location(int new_location) {
 bool Plant::set_price(double new_price) {
 	price=new_price;
 	if (price==new_price) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+bool Plant::set_need_watering(bool boolean) {
+	need_watering=boolean;
+	if (need_watering==boolean){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+bool Plant::set_need_fertilizing(bool boolean) {
+	need_fertilizing=boolean;
+	if (need_fertilizing==boolean){
 		return true;
 	} else {
 		return false;

@@ -8,13 +8,13 @@
 class Plant {
 
 protected:
-  static int species_count;     // Count of number of species in nursery - used for inventory array allocation
+  static int species_count;     // Count of number of species in nursery
   int species_id;
   int class_id;
   double price;
   int current_stock;
-  int fertilizing_req;
-  int watering_req;
+  bool need_fertilizing;
+  bool need_watering;
   int location;
   std::string in_or_out;
   std::string species;
@@ -27,7 +27,10 @@ public:
   double get_price();
   int get_class_id();
   int get_species_id();
+  int get_species_count();
   int get_current_stock();
+  bool get_need_watering();
+  bool get_need_fertilizing();
   int get_location();
   std::string get_in_or_out();
   std::string get_species();
@@ -37,6 +40,8 @@ public:
   bool set_current_stock(int stock_level);
   bool set_location(int new_location);
   bool set_price(double new_price);
+  bool set_need_watering(bool boolean);
+  bool set_need_fertilizing(bool boolean);
   
   // Behaviours
   bool water_plant();

@@ -7,8 +7,8 @@ Flowers::Flowers(std::string species) {
 	class_id=1;
 	price=-1;
 	current_stock=0;
-	fertilizing_req=2; 	// Twice a year
-	watering_req=3;		// Three times a week
+	need_watering=true;
+	need_fertilizing=true;
 	location=-1;
 	in_or_out="Both";
 	this->species=species;
@@ -20,8 +20,8 @@ Flowers::Flowers(std::string species, double price, int current_stock, int locat
 	class_id=1;
 	this->price=price;
 	this->current_stock=current_stock;
-	fertilizing_req=2;
-	watering_req=3;
+	need_watering=true;
+	need_fertilizing=true;
 	this->location=location;
 	in_or_out="Both";
 	this->species=species;

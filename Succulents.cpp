@@ -9,8 +9,8 @@ Succulents::Succulents(std::string species) {
 	class_id=4;
 	price=-1;
 	current_stock=0;
-	fertilizing_req=1; 	// Once a MONTH
-	watering_req=1;		// Once every 10 DAYS
+	need_watering=true;
+	need_fertilizing=true;
 	location=-1;
 	in_or_out="Indoor";
 	this->species=species;
@@ -22,8 +22,8 @@ Succulents::Succulents(std::string species, double price, int current_stock, int
 	class_id=4;
 	this->price=price;
 	this->current_stock=current_stock;
-	fertilizing_req=1;
-	watering_req=1;
+	need_watering=true;
+	need_fertilizing=true;
 	this->location=location;
 	in_or_out="Indoor";
 	this->species=species;

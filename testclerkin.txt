@@ -1,0 +1,20 @@
+Add Person
+Yes
+Clerk
+Yes
+Ben
+Add Plant
+Flower
+Yes
+No
+Rose
+Get Information
+Rose
+Sell
+Rose
+Order
+Rose
+Set Price
+Rose
+5.99
+Exit

@@ -7,8 +7,8 @@ Shrubs::Shrubs(std::string species) {
 	class_id=3;
 	price=-1;
 	current_stock=0;
-	fertilizing_req=2; 	// Twice a year
-	watering_req=2;		// Twice a week
+	need_watering=true;
+	need_fertilizing=true;
 	location=-1;
 	in_or_out="Outdoor";
 	this->species=species;
@@ -20,8 +20,8 @@ Shrubs::Shrubs(std::string species, double price, int current_stock, int locatio
 	class_id=3;
 	this->price=price;
 	this->current_stock=current_stock;
-	fertilizing_req=2;
-	watering_req=2;
+	need_watering=true;
+	need_fertilizing=true;
 	this->location=location;
 	in_or_out="Outdoor";
 	this->species=species;

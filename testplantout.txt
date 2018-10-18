@@ -1,0 +1,22 @@
+Welcome to Bridget's Garden Nursery!
+What would you like to do?
+What type of plant would you like to add?
+Do you know the species?
+Do you know all of the following details?
+  Location Reference Number
+  Price
+  Current Stock
+Enter the species: What would you like to do next?
+There are 1 species of plants in the nursery.
+The plants in the nursery are: 
+  Apple Tree
+What would you like to do next?
+What type of plant would you like to add?
+Do you know the species?
+Do you know all of the following details?
+  Location Reference Number
+  Price
+  Current Stock
+Enter the species: Enter the location reference number: Enter the price: Enter the current stock level: Error. There is only room for 50 more plants in that location.
+Do you want to change your Stock Level or Location?
+Enter the current stock level: What would you like to do next?

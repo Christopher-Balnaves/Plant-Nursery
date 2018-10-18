@@ -1,0 +1,16 @@
+Add Plant
+Fruit Tree
+Yes
+Yes
+Apple Tree
+0
+80
+5
+Sell
+Order
+Set Price
+Relocate Plant
+Restock Plant
+Pick Fruit
+Get Information
+Exit

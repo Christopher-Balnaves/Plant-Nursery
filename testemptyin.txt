@@ -1,0 +1,18 @@
+T
+Change Name
+Change Job
+Sell
+Order
+Set Price
+Relocate Plant
+Restock Plant
+Water
+Fertilize
+Pick Fruit
+Rake Paths
+List Plants
+Get Information
+Get Available Space
+Plant Types
+Help
+Exit

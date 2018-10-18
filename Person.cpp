@@ -51,12 +51,12 @@ bool Person::rake_paths(){
 	return false;
 }
 
-bool Person::water(Plant* watering, int currentnumber){
+bool Person::water(Plant** watering, int currentnumber){
 	std::cout << "Clerks cannot water plants. " << std::endl;
 	return false;
 } //each function returns true if the task needs to be done
 
-bool Person::fertilise(Plant* watering, int currentnumber){
+bool Person::fertilise(Plant** fertilizing, int currentnumber){
 	std::cout << "Clerks cannot fertilise plants. " << std::endl;
 	return false;
 }
@@ -74,6 +74,11 @@ bool Person::relocate(Plant* planttomove, int new_location){
 bool Person::pick_fruit(Plant* planttopick) {
 	std::cout << "Clerks cannot pick fruit. " << std::endl;
 	return false;	
+}
+
+int Person::get_assigned_location() {
+	std::cout << "Clerks do not have an assigned location." << std::endl;
+	return -1;
 }
 
 bool Person::sell(Plant* planttosell, int n){
@@ -96,7 +101,7 @@ void Person::get_information(Plant* planttocheck){
 	return;
 }
 
-bool Person::set_price(Plant* planttochangeprice, int price){
+bool Person::set_price(Plant* planttochangeprice, double price){
 	std::cout << "Garden hands cannot set price. " << std::endl;
 	return false;
 } 

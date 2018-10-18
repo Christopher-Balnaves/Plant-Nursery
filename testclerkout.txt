@@ -1,0 +1,33 @@
+Welcome to Bridget's Garden Nursery!
+What would you like to do?
+Do you know their job?
+Enter their job: Do you know their name?
+Enter their name: A Clerk called Ben was created.
+What would you like to do next?
+What type of plant would you like to add?
+Do you know the species?
+Do you know all of the following details?
+  Location Reference Number
+  Price
+  Current Stock
+Enter the species: What would you like to do next?
+Which species do you want that information for?
+For species Rose :
+  Species ID is 1.
+  Price is -1 dollars.
+  Current stock level is 0.
+  Location reference number is -1.
+  Rose is a flower so may be be kept indoors or outdoors.
+  Rose is a flower so needs to be watered three times a week.
+  Rose is a flower so needs to be fertilized twice a year.
+What would you like to do next?
+Which species do you want to sell?
+There is no stock available of this plant.
+What would you like to do next?
+Which species do you want to order?
+The plant cannot be ordered as the location and therefore available space is unknown.
+What would you like to do next?
+Which species do you want to set the price of?
+Enter the new price: 
+Price change successful.
+What would you like to do next?

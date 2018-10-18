@@ -1,0 +1,17 @@
+Add Plant
+Fruit Tree
+Yes
+No
+Apple Tree
+List Plants
+Add Plant
+Flower
+Yes
+Yes
+Rose
+0
+5.99
+51
+Stock Level
+50
+Exit

@@ -15,6 +15,9 @@ GardenHand::GardenHand(string given_name, int assignment) : Person (given_name, 
 int assigned_location = assignment;
 }
 
+GardenHand::GardenHand() : Person ("?", "Garden Hand"){
+int assigned_location = -1;
+}
 
 //getters
 int GardenHand::get_assigned_location(){
@@ -23,34 +26,51 @@ int GardenHand::get_assigned_location(){
 
 //job related methods
 
-bool GardenHand::water(Plant* watering, int currentnumber){  
+bool GardenHand::water(Plant** watering, int currentnumber){  
   
+  int successful=0;
+  int unsuccessful=0;
+
   if (currentnumber==0) {
       cout << " There are no plants in this location, so they cannot be watered." << endl;
       return false;
+  } else {
+    for (int i = 0; i < currentnumber; ++i) {
+      if (watering[i]->get_need_watering()==true) {
+        successful++;
+        watering[i]->set_need_watering(false);
+      } else {
+        unsuccessful++;
+      }
     }
-  
-  else {
-    cout << "There are " << currentnumber << " plants which were sucessfully watered." << endl; 
-     return true;
-     
-    }             
+    cout << successful << " plants were watered, " << unsuccessful << " did not need watering." << endl; 
+    return true;
+    }
+    return false;
 }
-bool GardenHand::fertilise(Plant* watering, int currentnumber){ 
+
+bool GardenHand::fertilise(Plant** fertilizing, int currentnumber){ 
   
+  int successful=0;
+  int unsuccessful=0;
+
   if (currentnumber==0) {
-      cout << " There are no plants in this location, so they cannot be fertilised." << endl;
+      cout << " There are no plants in this location, so they cannot be fertilized." << endl;
       return false;
+  } else {
+    for (int i = 0; i < currentnumber; ++i) {
+      if (fertilizing[i]->get_need_fertilizing()==true) {
+        successful++;
+        fertilizing[i]->set_need_fertilizing(false);
+      } else {
+        unsuccessful++;
+      }
     }
-  
-  else {
-    cout << "There are " << currentnumber << " plants which were sucessfully fertilised." << endl; 
+    cout << successful << " plants were fertilized, " << unsuccessful << " did not need fertilizing." << endl; 
      return true;
-     
-    }                    
+    }                   
 }
 bool GardenHand::restock(Plant* planttorestock, int n){
-  //first check if there is the room to put in the number of plants to be restocked
   return planttorestock->set_current_stock(planttorestock->get_current_stock()+n);
   
 }

@@ -1,0 +1,44 @@
+Welcome to Bridget's Garden Nursery!
+What would you like to do?
+Do you know their job?
+Enter their job: Do you know their name?
+Enter their name: What is their assigned location's reference number?
+A Garden Hand called Tom was created.
+What would you like to do next?
+What type of plant would you like to add?
+Do you know the species?
+Do you know all of the following details?
+  Location Reference Number
+  Price
+  Current Stock
+Enter the species: What would you like to do next?
+Which species do you want to relocate?
+Enter the new location reference number: 
+Relocation successful.
+What would you like to do next?
+Which species do you want to restock?
+Enter the new amount being restocked: 
+Cannot restock that many plants into the current area. Either reduce the stock or change the plant location.
+What would you like to do next?
+Which species do you want to restock?
+Enter the new amount being restocked: 
+Restock successful.
+What would you like to do next?
+Tom raked the paths.
+What would you like to do next?
+There is no fruit trees in the nursery.
+What would you like to do next?
+What type of plant would you like to add?
+Do you know the species?
+Do you know all of the following details?
+  Location Reference Number
+  Price
+  Current Stock
+Enter the species: What would you like to do next?
+Fruit picked succuessfully from 1 trees.
+The fruit was not ready to be picked from 0 trees.
+What would you like to do next?
+1 plants were watered, 0 did not need watering.
+What would you like to do next?
+1 plants were fertilized, 0 did not need fertilizing.
+What would you like to do next?
