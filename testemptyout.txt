@@ -48,6 +48,8 @@ Valid commands include:
   Set Price
   Relocate Plant
   Restock Plant
+  Water
+  Fertilize
   Pick Fruit
   Rake Paths
   List Plants
@@ -57,3 +59,4 @@ Valid commands include:
   Help
   Exit
 What would you like to do next?
+Thank you for visiting Bridget's Nursery!

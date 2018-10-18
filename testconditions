@@ -4,14 +4,17 @@ echo Testing Empty Conditions
 echo Testing Person Creation / Detail Change
 ./main < testpersonin.txt | diff - testpersonout.txt
 
-echo Testing No Person Conditions
-./main < testnopeoplein.txt | diff - testnopeopleout.txt
-
 echo Testing Plant Creation / Detail Change
 ./main < testplantin.txt | diff - testplantout.txt
+
+echo Testing No Person Conditions
+./main < testnopeoplein.txt | diff - testnopeopleout.txt
 
 echo Testing Clerk Duties
 ./main < testclerkin.txt | diff - testclerkout.txt
 
 echo Testing Garden Hand Duties
 ./main < testgardenhandin.txt | diff - testgardenhandout.txt
+
+echo Full Test
+./main < fulltestin.txt | diff - fulltestout.txt

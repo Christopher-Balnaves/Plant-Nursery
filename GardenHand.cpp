@@ -7,12 +7,12 @@ using namespace std;
 
 //constructors
 GardenHand::GardenHand(int assignment) : Person ("?", "Garden Hand"){
-int assigned_location = assignment;
+int assigned_location = 0;
 }
 
 
 GardenHand::GardenHand(string given_name, int assignment) : Person (given_name, "Garden Hand"){
-int assigned_location = assignment;
+int assigned_location = 0;
 }
 
 GardenHand::GardenHand() : Person ("?", "Garden Hand"){
@@ -32,7 +32,7 @@ bool GardenHand::water(Plant** watering, int currentnumber){
   int unsuccessful=0;
 
   if (currentnumber==0) {
-      cout << " There are no plants in this location, so they cannot be watered." << endl;
+      cout << "There are no plants in this location, so they cannot be watered." << endl;
       return false;
   } else {
     for (int i = 0; i < currentnumber; ++i) {
@@ -55,7 +55,7 @@ bool GardenHand::fertilise(Plant** fertilizing, int currentnumber){
   int unsuccessful=0;
 
   if (currentnumber==0) {
-      cout << " There are no plants in this location, so they cannot be fertilized." << endl;
+      cout << "There are no plants in this location, so they cannot be fertilized." << endl;
       return false;
   } else {
     for (int i = 0; i < currentnumber; ++i) {

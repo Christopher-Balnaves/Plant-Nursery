@@ -1,0 +1,65 @@
+Help
+Add Person
+Yes
+Clerk
+Yes
+Ben
+Add Person
+Yes
+Garden Hand
+Yes
+Tom
+abc
+0
+Get Available Space
+Add Plant
+Bug
+Plant Types
+Add Plant
+Flower
+Yes
+No
+Rose
+Get Available Space
+List Plants
+Get Information
+Rose
+Relocate Plant
+Rose
+0
+Restock Plant
+Rose
+51
+Restock Plant
+Rose
+12
+Set Price
+Rose
+5.99
+Get Available Space
+Get Information
+Rose
+Sell
+Rose
+l
+8
+Get Available Space
+Order
+Rose
+6
+Add Plant
+Fruit Tree
+Yes
+Yes
+Apple Tree
+0
+80
+50
+Stock Level
+-1
+12
+List Plants
+Get Available Space
+Pick Fruit
+Rake Paths
+Exit

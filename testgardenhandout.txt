@@ -42,3 +42,8 @@ What would you like to do next?
 What would you like to do next?
 1 plants were fertilized, 0 did not need fertilizing.
 What would you like to do next?
+0 plants were watered, 1 did not need watering.
+What would you like to do next?
+0 plants were fertilized, 1 did not need fertilizing.
+What would you like to do next?
+Thank you for visiting Bridget's Nursery!

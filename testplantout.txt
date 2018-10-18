@@ -20,3 +20,4 @@ Do you know all of the following details?
 Enter the species: Enter the location reference number: Enter the price: Enter the current stock level: Error. There is only room for 50 more plants in that location.
 Do you want to change your Stock Level or Location?
 Enter the current stock level: What would you like to do next?
+Thank you for visiting Bridget's Nursery!

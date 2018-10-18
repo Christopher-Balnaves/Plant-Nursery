@@ -28,4 +28,6 @@ Apple Tree
 Pick Fruit
 Water
 Fertilize
+Water
+Fertilize
 Exit

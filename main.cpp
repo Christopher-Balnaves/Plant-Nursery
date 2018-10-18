@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <vector>
+#include <limits>
 
 using namespace std;
 
@@ -95,8 +96,10 @@ int main(void) {
 							} else if (job=="Garden Hand") {
 								cout << "What is their assigned location's reference number?" << endl;
 								cin >> amount;
-								while ((amount > NO_OF_LOCATIONS) || (amount < 0) || (cin.fail()==1)) {
+								while ((amount > NO_OF_LOCATIONS-1) || (amount < 0) || (cin.fail()==1)) {
 									cout << "That is not a valid reference number. Enter an integer between 0 (inclusive) and " << NO_OF_LOCATIONS << " (non-inclusive)." << endl;
+									cin.clear();
+									cin.ignore(numeric_limits<streamsize>::max(), '\n');
 									cin >> amount;
 								}
 								people[1]=new GardenHand(name,amount);
@@ -118,8 +121,11 @@ int main(void) {
 							} else if (job=="Garden Hand") {
 								cout << "What is their assigned location's reference number?" << endl;
 								cin >> amount; 
-								while ((amount > NO_OF_LOCATIONS) || (amount < 0) || (cin.fail()==1)) {
+								while ((amount > NO_OF_LOCATIONS-1) || (amount < 0) || (cin.fail()==1)) {
 									cout << "That is not a valid reference number. Enter an integer between 0 (inclusive) and " << NO_OF_LOCATIONS << " (non-inclusive)." << endl;
+									cin.clear();
+									cin.ignore(numeric_limits<streamsize>::max(), '\n');
+									cin >> amount;
 								}
 								people[1]=new GardenHand(amount);
 								have_gardenhand=true;
@@ -137,7 +143,7 @@ int main(void) {
 						number_of_people++;
 					}
 
-					// If do not know job person cannot be made
+					// Creat person with unknown details
 				} else if (answer=="No") {
 					if (have_clerk==false) {
 						people[0]=new Clerk();
@@ -269,6 +275,8 @@ int main(void) {
 						cin >> amount;
 						while (cin.fail()==1) {
 							cout << "You must enter an integer value." << endl << "Enter the amount to be sold: " << endl;
+							cin.clear();
+							cin.ignore(numeric_limits<streamsize>::max(), '\n');
 							cin >> amount;
 						}
 						cin.ignore();
@@ -317,6 +325,8 @@ int main(void) {
 						cin >> amount;
 						while (cin.fail()==1) {
 							cout << "You must enter an integer value." << endl << "Enter the amount to be ordered: ";
+							cin.clear();
+							cin.ignore(numeric_limits<streamsize>::max(), '\n');
 							cin >> amount;
 						}
 						while (amount<0) {
@@ -325,6 +335,8 @@ int main(void) {
 							cin >> amount;
 							while (cin.fail()==1) {
 								cout << "You must enter an integer value." << endl << "Enter the POSITIVE amount to be ordered: ";
+								cin.clear();
+								cin.ignore(numeric_limits<streamsize>::max(), '\n');
 								cin >> amount;
 							}
 						}
@@ -333,6 +345,8 @@ int main(void) {
 							cin >> amount;
 							while (cin.fail()==1) {
 								cout << "You must enter an integer value." << endl << "Enter the amount to be ordered: " << endl;
+								cin.clear();
+								cin.ignore(numeric_limits<streamsize>::max(), '\n');
 								cin >> amount;
 							}
 						}
@@ -367,21 +381,27 @@ int main(void) {
 						getline(cin,species);
 						cout << "Enter the location reference number: ";
 						cin >> location;
-						while (cin.fail()==1) {
-							cout << "You must enter an integer value." << endl << "Enter the location reference number: " << endl;
-							cin >> amount;
+						while ((cin.fail()==1) || (location>=NO_OF_LOCATIONS) || (location<0)) {
+							cout << "You must enter an integer value between 0 (inclusive) and " << NO_OF_LOCATIONS << " (non-inclusive)." << endl << "Enter the location reference number: ";
+							cin.clear();
+							cin.ignore(numeric_limits<streamsize>::max(), '\n');
+							cin >> location;
 						}
 						cout << "Enter the price: ";
 						cin >> price;
-						while (cin.fail()==1) {
-							cout << "You must enter an integer value." << endl << "Enter the price: " << endl;
-							cin >> amount;
+						while ((cin.fail()==1) || (price<0)) {
+							cout << "You must enter an integer value." << endl << "Enter the price: ";
+							cin.clear();
+							cin.ignore(numeric_limits<streamsize>::max(), '\n');
+							cin >> price;
 						}
 						cout << "Enter the current stock level: ";
 						cin >> current_stock;
-						while (cin.fail()==1) {
-							cout << "You must enter an integer value." << endl << "Enter the current stock level: " << endl;
-							cin >> amount;
+						while ((cin.fail()==1) || (current_stock<0)) {
+							cout << "You must enter an integer value." << endl << "Enter the current stock level: ";
+							cin.clear();
+							cin.ignore(numeric_limits<streamsize>::max(), '\n');
+							cin >> current_stock;
 						}
 						cin.ignore();
 						while (current_stock>avail_stock_in_location[location]) {	
@@ -391,19 +411,26 @@ int main(void) {
 							if (answer=="Stock Level") {																								//must change either the stock level or
 								cout << "Enter the current stock level: ";
 								cin >> current_stock;
-								while (cin.fail()==1) {
-									cout << "You must enter an integer value." << endl << "Enter the current stock level: " << endl;
-									cin >> amount;
+								while ((cin.fail()==1) || (current_stock<0)) {
+									cout << "You must enter a positive integer value." << endl << "Enter the current stock level: " << endl;
+									cin.clear();
+									cin.ignore(numeric_limits<streamsize>::max(), '\n');
+									cin >> current_stock;
 								}
 							} else if (answer=="Location") {																							//or location
 								cout << "Enter the location reference number: ";
+								cin.ignore(numeric_limits<streamsize>::max(), '\n');
 								cin >> location;
-								while (cin.fail()==1) {
-									cout << "You must enter an integer value." << endl << "Enter the location reference number: " << endl;
-									cin >> amount;
+								while ((cin.fail()==1) || (location<0) || (location>NO_OF_LOCATIONS)){
+									cout << "You must enter an integer value between 0 (inclusive) and " << NO_OF_LOCATIONS << " (non-inclusive)." << endl << "Enter the location reference number: " << endl;
+									cin.clear();
+									cin.ignore(numeric_limits<streamsize>::max(), '\n');
+									cin >> location;
 								}
 							} else {
 								cout << "That is not a valid answer. Enter \"Stock Level\" or \"Location\".";
+								cin.clear();
+								cin.ignore(numeric_limits<streamsize>::max(), '\n');
 							}
 							cin.ignore();
 						}	
@@ -493,7 +520,9 @@ int main(void) {
 					cin >> price;
 					while (cin.fail()==1) {
 						cout << "You must enter an integer value." << endl << "Enter the new price: " << endl;
-						cin >> amount;
+						cin.clear();
+						cin.ignore(numeric_limits<streamsize>::max(), '\n');
+						cin >> price;
 					}
 					cin.ignore();
 					boolean=people[0]->set_price(inventory[arr_location],price);
@@ -531,10 +560,13 @@ int main(void) {
 					cin >> location;
 					while (cin.fail()==1) {
 						cout << "You must enter an integer value." << endl << "Enter the new location reference number: " << endl;
-					    cin >> amount;
+					    cin.clear();
+						cin.ignore(numeric_limits<streamsize>::max(), '\n');
+						cin >> location;
 					}
 					cin.ignore();
 					boolean=people[1]->relocate(inventory[arr_location],location);
+					
 					if (boolean==true) {
 						cout << "Relocation successful." << endl;
 					} else {
@@ -569,6 +601,8 @@ int main(void) {
 					cin >> amount;
 					while (cin.fail()==1) {
 						cout << "You must enter an integer value." << endl << "Enter the amount to be restocked: " << endl;
+						cin.clear();
+						cin.ignore(numeric_limits<streamsize>::max(), '\n');
 						cin >> amount;
 					}
 					cin.ignore();
@@ -774,6 +808,7 @@ int main(void) {
 		getline(cin,command);
 	}
 
+	cout << "Thank you for visiting Bridget's Nursery!" << endl;
 
 	// Deleting created people and plants
 	if (people_delete==true){

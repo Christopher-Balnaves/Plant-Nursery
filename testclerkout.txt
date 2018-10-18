@@ -31,3 +31,4 @@ Which species do you want to set the price of?
 Enter the new price: 
 Price change successful.
 What would you like to do next?
+Thank you for visiting Bridget's Nursery!

@@ -1,4 +1,1 @@
 g++ -o main -std=c++11 Person.cpp GardenHand.cpp Clerk.cpp Plant.cpp Flowers.cpp FruitTrees.cpp Shrubs.cpp Succulents.cpp Trees.cpp main.cpp
-
-echo Sell and Order Test
-./main < testinputreal.txt | diff - testoutputreal.txt 
